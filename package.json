@@ -1,0 +1,25 @@
+{
+  "name": "vue_gulu",
+  "version": "1.0.0",
+  "description": "create by fcdada 2021-10-28",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fclvhh/vue_gulu.git"
+  },
+  "keywords": [
+    "轮子"
+  ],
+  "author": "fcdada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fclvhh/vue_gulu/issues"
+  },
+  "homepage": "https://github.com/fclvhh/vue_gulu#readme",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
+}
