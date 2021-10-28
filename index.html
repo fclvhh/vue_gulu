@@ -22,46 +22,22 @@
             --border-color: #999;
             --border-color-hover:#666;
         }
-        .g-button {
-            height: var(--button-height);
-            font-size: var(--font-size);
-            padding: 0 1em;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            background: var(--button-bg);
-        }
+
         #app {
             margin: 20px;
         }
 				body {
 					font-size: var(--font-size);
 				}
-				.g-button:hover {
-					border-color: var(--border-color-hover);
-				}
-				.g-button:active {
-					background-color:var(--button-active-bg);
-				}
-				.g-button:focus {
-					outline: none;
-				}
+
 
     </style>
-    <script src="./node_modules/vue/dist/vue.min.js"></script>
 </head>
 <body>
     <div id="app">
         {{this.message}}
         <g-button></g-button>
     </div>
-    <script src="button.js"></script>
-    <script>
-        new Vue({
-            el:"#app",
-            data:{
-                message: '只有我一个人嘛？'
-            }
-        })
-    </script>
+		<script src="src/app.js"></script>
 </body>
 </html>
