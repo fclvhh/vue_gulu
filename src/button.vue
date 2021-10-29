@@ -1,5 +1,10 @@
 <template>
-  <button @click="handleClick" class="g-button">点我</button>
+  <button @click="handleClick" class="g-button">
+
+    <slot name="button-icon"></slot>
+    <slot name="button-name"></slot>
+
+  </button>
 </template>
 <script>
  export default {

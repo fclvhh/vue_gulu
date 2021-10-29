@@ -1,43 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>轱辘</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :root {
-            --button-height:32px;
-            --font-size:14px;
-            --button-bg:white;
-            --button-active-bg:#eee;
-            --border-radius:4px;
-            --color:#333;
-            --border-color: #999;
-            --border-color-hover:#666;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>轱辘</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-        #app {
-            margin: 20px;
-        }
-				body {
-					font-size: var(--font-size);
-				}
+		:root {
+			--button-height: 32px;
+			--font-size: 14px;
+			--button-bg: white;
+			--button-active-bg: #eee;
+			--border-radius: 4px;
+			--color: #333;
+			--border-color: #999;
+			--border-color-hover: #666;
+		}
+
+		.icon {
+			width: 1em;
+			height: 1em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+
+		#app {
+			margin: 20px;
+		}
+
+		body {
+			font-size: var(--font-size);
+		}
 
 
-    </style>
+	</style>
 </head>
 <body>
-    <div id="app">
-        {{this.message}}
-        <g-button></g-button>
-    </div>
-		<script src="src/app.js"></script>
+<div id="app">
+	{{ this.message }}
+	<g-button>
+		<span slot="button-name">按钮</span>
+		<svg class="icon" aria-hidden="true" slot="button-icon">
+			<use xlink:href="#i-settings"></use>
+		</svg>
+	</g-button>
+</div>
+<script src="src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1856546_h9g0ucd0q.js"></script>
 </body>
 </html>
