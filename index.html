@@ -24,13 +24,7 @@
 			--border-color-hover: #666;
 		}
 
-		.icon {
-			width: 1em;
-			height: 1em;
-			vertical-align: -0.15em;
-			fill: currentColor;
-			overflow: hidden;
-		}
+
 
 		#app {
 			margin: 20px;
@@ -46,11 +40,12 @@
 <body>
 <div id="app">
 	{{ this.message }}
+	<g-button :class-name="iconName" :icon-position="position">
+		<span slot="button-name">按钮</span>
+	</g-button>
+<!--	不传iconName-->
 	<g-button>
 		<span slot="button-name">按钮</span>
-		<svg class="icon" aria-hidden="true" slot="button-icon">
-			<use xlink:href="#i-settings"></use>
-		</svg>
 	</g-button>
 </div>
 <script src="src/app.js"></script>

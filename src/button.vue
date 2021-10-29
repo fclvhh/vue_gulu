@@ -1,9 +1,23 @@
 <template>
   <button @click="handleClick" class="g-button">
-
-    <slot name="button-icon"></slot>
-    <slot name="button-name"></slot>
-
+    <template v-if="iconPosition==='left'">
+      <svg class="icon" aria-hidden="true" v-if="className">
+        <use v-bind:xlink:href="`#i-${className}`"></use>
+      </svg>
+      <slot name="button-name"></slot>
+    </template>
+    <template v-else-if="iconPosition==='right'" >
+      <slot name="button-name"></slot>
+      <svg class="icon" aria-hidden="true" v-if="className">
+        <use v-bind:xlink:href="`#i-${className}`"></use>
+      </svg>
+    </template>
+    <template v-else>
+      <slot name="button-name"></slot>
+      <svg class="icon" aria-hidden="true" v-if="className">
+        <use v-bind:xlink:href="`#i-${className}`"></use>
+      </svg>
+    </template>
   </button>
 </template>
 <script>
@@ -13,9 +27,11 @@
        xxx:''
      }
    },
+   props:['className','iconPosition'],
    methods:{
      handleClick() {
        console.log('click true!')
+       console.log(this.iconPosition==='right')
      }
    }
  }
@@ -40,5 +56,13 @@
 
 .g-button:focus {
   outline: none;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 </style>
