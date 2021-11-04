@@ -7,6 +7,6 @@ new Vue({
   "data":{
     "message": '只有我一个人嘛？',
     "iconName":'settings',
-    "position":'left'
+    "position":'',
   }
 })

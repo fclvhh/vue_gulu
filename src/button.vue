@@ -1,23 +1,11 @@
 <template>
-  <button @click="handleClick" class="g-button">
-    <template v-if="iconPosition==='left'">
-      <svg class="icon" aria-hidden="true" v-if="className">
+  <button @click="handleClick" class="g-button" >
+
+      <svg class="icon" aria-hidden="true" v-if="className" :class="{[`icon-${iconPosition}`]:true}">
         <use v-bind:xlink:href="`#i-${className}`"></use>
       </svg>
       <slot name="button-name"></slot>
-    </template>
-    <template v-else-if="iconPosition==='right'" >
-      <slot name="button-name"></slot>
-      <svg class="icon" aria-hidden="true" v-if="className">
-        <use v-bind:xlink:href="`#i-${className}`"></use>
-      </svg>
-    </template>
-    <template v-else>
-      <slot name="button-name"></slot>
-      <svg class="icon" aria-hidden="true" v-if="className">
-        <use v-bind:xlink:href="`#i-${className}`"></use>
-      </svg>
-    </template>
+
   </button>
 </template>
 <script>
@@ -44,6 +32,19 @@
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--button-bg);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  .icon-right {
+    order: 2;
+    margin-left: .5rem;
+    margin-right: 0;
+  }
+  .icon-left {
+    order: -1;
+    margin-right: .5rem;
+  }
 }
 
 .g-button:hover {
@@ -64,5 +65,8 @@
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  order: 0;
+  margin-right: .5rem;
+
 }
 </style>
