@@ -15,7 +15,13 @@
        xxx:''
      }
    },
-   props:['className','iconPosition'],
+   props:{
+     className:{},
+     iconPosition:{
+       type:String,
+       default:'left'
+     }
+   },
    methods:{
      handleClick() {
        console.log('click true!')

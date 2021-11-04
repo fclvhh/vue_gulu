@@ -6,7 +6,6 @@ new Vue({
   "el":'#app',
   "data":{
     "message": '只有我一个人嘛？',
-    "iconName":'settings',
-    "position":'',
+    "iconName":'settings'
   }
 })
