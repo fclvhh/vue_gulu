@@ -1,39 +1,38 @@
 <template>
-  <button @click="handleClick" class="g-button" >
-
-      <svg class="icon" aria-hidden="true" v-if="className" :class="{[`icon-${iconPosition}`]:true}">
-        <use v-bind:xlink:href="`#i-${className}`"></use>
-      </svg>
+  <button class="g-button"  @click="changeState">
+      <g-icon :i-state="whatState" :icon-name="loadingIconName" v-if="whatState===true && loadingIconName" ></g-icon>
+      <g-icon :icon-name="className" :i-position="iconPosition" v-if="whatState===false && loadingIconName"></g-icon>
       <slot name="button-name"></slot>
 
   </button>
 </template>
 <script>
+
+import icon from "./icon";
+
  export default {
    data() {
      return {
-       xxx:''
+       xxx:'xxx'
      }
+   },
+   components:{
+     "g-icon":icon
    },
    props:{
      className:{},
      iconPosition:{
        type:String,
        default:'left',
-       validator(value) {
-         if (!(value !== "left" || value !== "right")) {
-           return;
-         }
-         console.log('false');
-       }
-
-     }
+     },
+     whatState:{},
+     loadingIconName:{}
    },
    methods:{
-     handleClick() {
-       console.log('click true!')
-       console.log(this.iconPosition==='right')
-     }
+     changeState() {
+       this.$emit("toggle")
+     },
+
    }
  }
 </script>

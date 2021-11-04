@@ -24,13 +24,6 @@
 			--border-color-hover: #666;
 		}
 
-		.icon {
-			width: 1em;
-			height: 1em;
-			vertical-align: -0.15em;
-			fill: currentColor;
-			overflow: hidden;
-		}
 
 		#app {
 			margin: 20px;
@@ -46,13 +39,19 @@
 <body>
 <div id="app">
 	{{ this.message }}
-	<g-button :class-name="iconName" :icon-position="position">
+	<g-button :class-name="iconName" :icon-position="position"
+						:what-state="iconState" :loading-icon-name="loadingName"
+				@toggle="handleToggle" ref="theOne"
+	>
+
 		<span slot="button-name">按钮</span>
 	</g-button>
 <!--	不传iconName-->
 	<g-button>
 		<span slot="button-name">按钮</span>
 	</g-button>
+
+	<g-icon :icon-name="icon"></g-icon>
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1856546_h9g0ucd0q.js"></script>
