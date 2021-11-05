@@ -52,6 +52,25 @@
 	</g-button>
 
 	<g-icon :icon-name="icon"></g-icon>
+
+
+	<g-button-group >
+		<template 	v-slot = "slotProps">
+			<g-button :class-name="slotProps.option1" :icon-position="slotProps.option1"
+							 ref="q1"
+			>
+				<span slot="button-name">上一个</span>
+			</g-button>
+			<g-button>
+				<span slot="button-name">更多</span>
+			</g-button>
+			<g-button :class-name="slotProps.option2" :icon-position="slotProps.option2"
+							 ref="q2"
+			>
+				<span slot="button-name">下一个</span>
+			</g-button>
+		</template>
+	</g-button-group>
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1856546_h9g0ucd0q.js"></script>

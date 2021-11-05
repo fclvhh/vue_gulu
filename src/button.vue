@@ -25,8 +25,14 @@ import icon from "./icon";
        type:String,
        default:'left',
      },
-     whatState:{},
-     loadingIconName:{}
+     whatState:{
+       type:Boolean,
+       default:false
+     },
+     loadingIconName:{
+       type:String,
+       default:'loading'
+     }
    },
    methods:{
      changeState() {
