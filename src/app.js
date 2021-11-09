@@ -26,7 +26,10 @@ new Vue({
 })
 
 import chai from 'chai'
+import spies from 'chai-spies'
 const expect = chai.expect
+chai.use(spies)
+
 // 1. 测试 className
 // {
 //   const Constructor = Vue.extend(button)
@@ -113,11 +116,11 @@ const expect = chai.expect
   )
   Button.$mount('#test')
   console.log(Button.$el);
-  Button.$el.onclick = ()=>{
-    expect(1).to.eq(2) // value改成1，则pass ==> 事件触发了
-  }
+  let spy = chai.spy(function (){});
+  Button.$el.onclick = spy
   Button.$el.click()
   // 打扫战场
+  expect(spy).to.have.been.called()
   Button.$el.remove()
   Button.$destroy()
 
