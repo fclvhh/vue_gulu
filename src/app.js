@@ -24,3 +24,101 @@ new Vue({
     }
   }
 })
+
+import chai from 'chai'
+const expect = chai.expect
+// 1. 测试 className
+// {
+//   const Constructor = Vue.extend(button)
+//   console.log(Constructor);
+//   const Button = new Constructor(
+//     {
+//       propsData:{
+//         className:'xiazai'
+//       }
+//     }
+//   )
+//   Button.$mount('#test')
+//   console.log(Button.$el);
+//   let ele = Button.$el.querySelector('use')
+//   console.log(ele);
+//   expect(ele.getAttribute('xlink:href')).to.eq('#i-xiazai')
+//
+// }
+
+// 测试loading
+// {
+//   const Constructor = Vue.extend(button)
+//   console.log(Constructor);
+//   const Button = new Constructor(
+//     {
+//       propsData:{
+//         className:"xiazai",
+//         loadingIconName:'loading',
+//         whatState:false,
+//
+//       }
+//     }
+//   )
+//   Button.$mount('#test')
+//   console.log(Button.$el);
+//   let ele = Button.$el.querySelector('use')
+//   console.log(ele);
+//   expect(ele.getAttribute('xlink:href')).to.eq('#i-loading')
+//
+// }
+
+// 3. 测试 position
+// {
+//   const Constructor = Vue.extend(button)
+//   console.log(Constructor);
+//   const Button = new Constructor(
+//     {
+//       propsData:{
+//         className:"xiazai",
+//         loadingIconName:'loading',
+//         whatState:false,
+//         iconPosition:'right',
+//
+//       }
+//     }
+//   )
+//   Button.$mount('#test')
+//   console.log(Button.$el);
+//   let ele = Button.$el.querySelector('svg')
+//   console.log(ele.classList.contains('icon-right'));
+//   // expect(ele.getAttribute('xlink:href')).to.eq('#i-loading')
+//
+//   // 打扫战场
+//   Button.$el.remove()
+//   Button.$destroy()
+//
+// }
+
+// 4.测试按钮上的事件
+
+{
+  const Constructor = Vue.extend(button)
+  console.log(Constructor);
+  const Button = new Constructor(
+    {
+      propsData:{
+        className:"xiazai",
+        loadingIconName:'loading',
+        whatState:false,
+        iconPosition:'right',
+
+      }
+    }
+  )
+  Button.$mount('#test')
+  console.log(Button.$el);
+  Button.$el.onclick = ()=>{
+    expect(1).to.eq(2) // value改成1，则pass ==> 事件触发了
+  }
+  Button.$el.click()
+  // 打扫战场
+  Button.$el.remove()
+  Button.$destroy()
+
+}
