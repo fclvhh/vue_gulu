@@ -38,6 +38,16 @@
 </head>
 <body>
 <div id="app">
+	<g-input :value="value" :disabled="true"></g-input>
+	<g-input value="李四" :readonly="true" ></g-input>
+	<g-input value="王五" ></g-input>
+	<g-input value="赵六" :error="true"></g-input>
+	<div>
+
+			<g-input value="钱七" :error="true" :icon-name="iconName"></g-input>
+
+	</div>
+	<hr>
 	{{ this.message }}
 	<g-button :class-name="iconName" :icon-position="position"
 						:what-state="iconState" :loading-icon-name="loadingName"
@@ -52,7 +62,6 @@
 	</g-button>
 
 	<g-icon :icon-name="icon"></g-icon>
-
 
 	<g-button-group >
 		<template 	v-slot = "slotProps">
@@ -71,6 +80,8 @@
 			</g-button>
 		</template>
 	</g-button-group>
+
+
 </div>
 
 <div id="test">

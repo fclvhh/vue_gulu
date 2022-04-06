@@ -50,7 +50,6 @@ export default {
   overflow: hidden;
   order: 0;
   margin-right: .5rem;
-
 }
 .loading {
   animation: spin 2s linear infinite;
@@ -63,4 +62,5 @@ export default {
     transform: rotate(360deg);
   }
 }
+
 </style>

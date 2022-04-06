@@ -1,9 +1,8 @@
 <template>
   <button class="g-button"  @click="changeState">
-      <g-icon :i-state="whatState" :icon-name="loadingIconName" v-if="whatState===true && loadingIconName" ></g-icon>
+      <g-icon :i-state="whatState" :icon-name="loadingIconName" v-if="whatState===true && loadingIconName"></g-icon>
       <g-icon :icon-name="className" :i-position="iconPosition" v-if="whatState===false && loadingIconName"></g-icon>
       <slot name="button-name"></slot>
-
   </button>
 </template>
 <script>
@@ -85,6 +84,5 @@ import icon from "./icon";
   overflow: hidden;
   order: 0;
   margin-right: .5rem;
-
 }
 </style>
