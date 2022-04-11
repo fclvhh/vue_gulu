@@ -37,7 +37,7 @@
 	</style>
 </head>
 <body>
-<div id="app">
+	<div id="app">
 	<g-input :value="value" :disabled="true"></g-input>
 	<g-input value="李四" :readonly="true" ></g-input>
 	<g-input value="王五" ></g-input>
@@ -75,8 +75,14 @@
 		</template>
 	</g-button-group>
 
-
-</div>
+	<hr>
+	<hr>
+		<fc-button>
+				<template v-slot:btn-name>
+					biteMe
+				</template>
+		</fc-button>
+	</div>
 
 <div id="test">
 

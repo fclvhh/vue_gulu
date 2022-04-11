@@ -4,10 +4,15 @@ import Vue from "vue";
 import icon from "./icon";
 import buttonGroup from "./buttonGroup";
 import Input from "./input";
+import fcIcon from "./fc-icon"
+import fcButton from "./fc-button";
 Vue.component("g-button",button)
 Vue.component('g-icon',icon)
 Vue.component('g-button-group',buttonGroup)
 Vue.component('g-input',Input)
+Vue.component("fc-icon",fcIcon)
+Vue.component("fc-button",fcButton)
+
 new Vue({
   "el":'#app',
   "data":{
