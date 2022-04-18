@@ -39,6 +39,7 @@ export default {
       },this.autoCloseDelay * 1000)
     }
   },
+
   methods:{
     close() {
       this.$el.remove()
