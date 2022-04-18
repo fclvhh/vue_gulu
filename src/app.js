@@ -4,25 +4,37 @@ import Vue from "vue";
 import icon from "./icon";
 import buttonGroup from "./buttonGroup";
 import Input from "./input";
+import Toast from "./toast";
+import plugin from "./plugin";
 Vue.component("g-button",button)
 Vue.component('g-icon',icon)
 Vue.component('g-button-group',buttonGroup)
 Vue.component('g-input',Input)
+Vue.component("g-toast",Toast)
+
+Vue.use(plugin)
+
 new Vue({
   "el":'#app',
   "data":{
-    "message": '只有我一个人嘛？',
+    "message": '只有我一个人想笑吗？',
     "iconName":'settings',
     "position":'up',
     "icon":'download',
     "iconState":true,
     'loadingName':'loading',
-    "value":'张三'
+    "value":'张三',
+    btn:"点我",
+    msg:"这是提示message"
   },
+
   methods: {
     handleToggle() {
       this.iconState = !this.iconState;
       console.log(this.$refs.theOne.whatState )
+    },
+    showToast() {
+      this.$toast(this.msg)
     }
   }
 })
