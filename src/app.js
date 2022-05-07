@@ -4,10 +4,24 @@ import Vue from "vue";
 import icon from "./icon";
 import buttonGroup from "./buttonGroup";
 import Input from "./input";
+import Tabs from "./tabs";
+import tabsNav from "./tabs-nav";
+import tabsItem from "./tabs-item";
+import tabsBody from "./tabs-body";
+import tabsPanel from "./tabs-panel";
+
+
 Vue.component("g-button",button)
 Vue.component('g-icon',icon)
 Vue.component('g-button-group',buttonGroup)
 Vue.component('g-input',Input)
+Vue.component("g-tabs",Tabs);
+Vue.component('g-nav',tabsNav)
+Vue.component('g-item',tabsItem)
+Vue.component('g-body',tabsBody)
+Vue.component('g-panel',tabsPanel)
+
+
 new Vue({
   "el":'#app',
   "data":{
@@ -17,7 +31,8 @@ new Vue({
     "icon":'download',
     "iconState":true,
     'loadingName':'loading',
-    "value":'张三'
+    "value":'张三',
+    selectedTab:"sports"
   },
   methods: {
     handleToggle() {
@@ -29,6 +44,7 @@ new Vue({
 
 import chai from 'chai'
 import spies from 'chai-spies'
+import tabs from "./tabs";
 const expect = chai.expect
 chai.use(spies)
 try {
