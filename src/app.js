@@ -8,6 +8,8 @@ Vue.component("g-button",button)
 Vue.component('g-icon',icon)
 Vue.component('g-button-group',buttonGroup)
 Vue.component('g-input',Input)
+
+
 new Vue({
   "el":'#app',
   "data":{
